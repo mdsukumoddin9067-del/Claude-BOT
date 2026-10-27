@@ -1,0 +1,30 @@
+name: Run Minecraft Bot
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - name: কোড নামাও
+        uses: actions/checkout@v4
+
+      - name: Node.js ঠিক করো
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: লাইব্রেরি ইনস্টল করো
+        run: npm install
+
+      - name: বট চালাও
+        run: npm start
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          MC_HOST: ${{ secrets.MC_HOST }}
+          MC_PORT: ${{ secrets.MC_PORT }}
+          MC_USERNAME: GeminiBot
+          MC_AUTH: offline
+          GEMINI_MODEL: gemini-2.5-flash
