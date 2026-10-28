@@ -31,4 +31,4 @@ jobs:
           MC_PORT: ${{ secrets.MC_PORT }}
           MC_USERNAME: GeminiBot
           MC_AUTH: offline
-          GEMINI_MODEL: gemini-2.5-flash
+          GEMINI_MODEL: gemini-flash-latest
