@@ -2,7 +2,11 @@ name: Run Minecraft Bot
 
 on:
   workflow_dispatch:
-
+  push:
+    branches: [main]
+concurrency:
+  group: minecraft-bot
+  cancel-in-progress: true
 jobs:
   run-bot:
     runs-on: ubuntu-latest
