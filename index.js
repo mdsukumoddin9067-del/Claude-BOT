@@ -23,4 +23,4 @@ function start() {
   bot.once('spawn', () => {
     setupMovements(bot);
     console.log(`${bot.username} সার্ভারে ঢুকেছে`);
-    bot.chat('হ্যালো! আমি Gemini-চালিত বট। আমার
+    bot.chat('Hello! I am a Gemini bot. Call my name.');
